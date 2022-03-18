@@ -5,15 +5,30 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./styles.css" rel="stylesheet">
-    <title>Jajanken</title>
+    <title>Jajanken!</title>
   </head>
   <body>
-    <h1>Welcome to Jajanken!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <h1 class="title">Welcome to Jajanken!</h1>
+    <div>
+      <div class="selections">
+        <button class="selection" data-selection="rock">✊</button>
+        <button class="selection" data-selection="paper">✋</button>
+        <button class="selection" data-selection="scissors">✌️</button>
+        <button class="random" id="randombutton">Random</button>
+        <input type="checkbox" name="CB5wins" id="5winsCB">
+        <label>5 Wins?</label>
+      </div>
+    </div>
+    <div class="results">
+      <div>Your Score:
+        <span class="result-score" data-your-score>0</span>
+      </div>
+      <div data-final-column>Computer Score:
+        <span class="result-score" data-comp-score>0</span>
+      </div>
+      <!-- <div class="result-selection winner"></div> -->
+      <!-- <div class="result-selection"></div> -->
+    </div>
+    <script src="./scoreManager.js"></script>
   </body>
 </html>

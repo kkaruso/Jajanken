@@ -1,3 +1,70 @@
-/* styles.css */
+body {
+    background-color: #35524A;
+    color: #EBEBD3;
+}
+.title {
+    display: flex;
+    justify-content: center;
+}
 
-/* Add styles here to customize the appearance of your app */
+.random {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    max-height: 50px;
+    margin: 20px;
+    top: 50%;
+    background-color: #779CAB;
+}
+
+.selections{
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    max-height: 50px;
+    margin: 20px;
+    top: 50%;
+}
+
+.selection{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.2);
+}
+
+.results {
+    margin: 1rem;
+    display: grid;
+    justify-content: center;
+    color: #779CAB;
+    font-size: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.result-score {
+    margin-left: .1rem;
+    font-size: 2rem;
+    color: #A2E8DD;
+}
+
+.result-selection {
+    opacity: .6;
+    font-size: 2rem;
+}
+
+.result-selection.winner {
+    opacity: 1;
+    font-size: 2.5rem;
+}
