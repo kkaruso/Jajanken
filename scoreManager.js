@@ -30,7 +30,7 @@ selectionButtons.forEach(selectionButton => {
     })
 })
 
-randButton.addEventListener('click', function() {
+randButton.addEventListener('click', function () {
     const randomIndex = randomSelection();
     makeSelection(randomIndex)
 })
@@ -47,17 +47,25 @@ function makeSelection(selection) {
     if (computerWinner) incrementScore(computerScoreSpan)
 }
 
-function untilFiveWins() {
-    
-}
-
 function incrementScore(scoreSpan) {
-    scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
+    if (document.getElementById('5winsCB').checked) {
+        if (scoreSpan.innerText < 5) {
+            console.log('its in if')
+            scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
+        }
+        else {
+            console.log('its in else')
+            window.alert('5 points reached!')
+        }
+    }
+    else if (!document.getElementById('5winsCB').checked) {
+        scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
+    }
 }
 
 function addSelectionResult(selection, winner) {
     const div = document.createElement('div')
-    div.innerText = selection.emoji 
+    div.innerText = selection.emoji
     div.classList.add('result-selection')
     if (winner) div.classList.add('winner')
     finalColumn.after(div)
